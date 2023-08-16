@@ -1,0 +1,44 @@
+
+
+    <% layout('layouts/boilerplate')%>
+    <div class="row justify-content-center">
+        <h1 class="text-center">New article</h1>
+        <div class="col-lg-6 col-md-8 col-11">
+            <form action="/articles" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" type="text" id="title" name="article[title]" required>
+                </div>
+               
+                 
+                
+                <div class="mb-3">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="inputGroupFile01" >Upload</label>
+                        <input type="file" class="form-control" id="inputGroupFile01" name="image" multiple>
+                      </div>
+                </div>
+
+    
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" type="text" id="description" name="article[description]" placeholder="Breifly sum up the article in 2 to 3 lines" required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="body">Body</label>
+                    <textarea class="form-control" type="text" id="body" name="article[body]" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-success">Add article</button>
+                </div>
+            </form>
+            <a href="/articles">All articles</a>
+
+
+
+        </div>
+    </div>
+
+
+

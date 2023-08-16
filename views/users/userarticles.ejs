@@ -1,0 +1,32 @@
+<% layout('layouts/boilerplate') %>
+  
+<% if (els.articles.length>0) { %>
+    <h2 class="text-center">All Articles by <%= els.username %></h2>  
+  <% for (let article of els.articles){%>
+    <div class="card mt-3" >
+        <div class="row">
+            <div class="col-md-4">
+                <%  if(article.images[0]){ %>
+                    <img crossorigin="anonymous" class="img-fluid" alt="" src="<%=article.images[0].url%>">
+                <% } %>
+               
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><%= article.title %> </h5>
+                    <p class="card-text"><%= article.description %></p>
+                    <p class="card-text">
+                        <small class="text-muted"><%= article.location%></small>
+                    </p>
+                    <a class="btn btn-primary" href="/articles/<%=article._id%>">View <%=article.title%></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% }%>
+<% }else{ %>
+        
+    <div class="justify-content-center">
+        <h1>No articles published by the corresponding user </h1>
+    </div>
+ <% } %>
